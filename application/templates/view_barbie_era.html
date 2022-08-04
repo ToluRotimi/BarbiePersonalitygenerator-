@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h2> {{entity}} </h2>
+{% for b in barbie %}
+{{ b.__str__()}}
+<br>
+{% endfor %}
+{{message}}
+{% endblock body %}
