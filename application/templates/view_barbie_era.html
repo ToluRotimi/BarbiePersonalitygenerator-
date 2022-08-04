@@ -1,11 +1,8 @@
 {% extends 'layout.html' %}
 {% block body %}
 <h2> {{entity}} </h2>
-{% for u in user_era_ %}
-{{ u.__str__()}}
-{% if entity == 'Era' %}
-Assignee: {{Era.__str__()}}
-{% endif %}
+{% for b in barbie %}
+{{ b.__str__()}}
 <br>
 {% endfor %}
 {{message}}

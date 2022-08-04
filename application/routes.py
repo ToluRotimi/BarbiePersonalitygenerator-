@@ -1,21 +1,16 @@
 from flask import request, redirect,url_for, render_template
 from application import app, db
 from application.models import *
-from datetime import date
 from application.forms import *
 
 @app.route('/') #go to the home page
 def index():
     return render_template('layout.html')
 
-#CRUD for users and also get the dob_year to calculate the era/////////////////////////////////////////////////////////////////////////////////////////
+#CRUD for users /////////////////////////////////////////////////////////////////////////////////////////
 
-@app.route('/view_user')
-def all_users():
-    view_all_users = user.query.all()
-    return render_template('view_user.html',entity='Users',Users=view_all_users)
+# Creates new users 
 
-# adds new users using form and get the dob_year to calculate the era
 @app.route('/add_user', methods=['GET','POST'])
 def add_new_user():
     form = usersForm()
@@ -29,18 +24,22 @@ def add_new_user():
     else:
         return render_template('user_form.html', form=form) #if not completed redirect to the user-form
 
+@app.route('/view_user')
+def all_users():
+    view_all_users = user.query.all()
+    return render_template('view_user.html', entity='Users',Users=view_all_users)
 
 @app.route('/update_user/<int:id>', methods = ['GET', 'POST'])
 def update_users(id):
     user_update = user.query.get(id)
     form = usersForm()
     if form.validate_on_submit():
-        forename = form.forename.data
-        surname = form.surname.data
-        user_update.forename =forename
-        user_update.surname = surname 
+        user_update.forename = form.forename.data
+        user_update.surname = form.surname.data
         db.session.commit()
         return redirect (url_for('all_users', print="User Updated"))
+    form.forename.data = user_update.forename
+    form.surname.data = user_update.surname
     return render_template('user_form.html', form=form)
 
 @app.route('/delete_user/<int:id>')
@@ -52,12 +51,7 @@ def delete_users(id):
 
 #CRUD user_era schema ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@app.route('/view_user_era')
-def view_user_era():
-    user_era_ = user_era.query.all()
-    return render_template('get_user_era.html', entity ='Era',Era=user_era_)
-
-# creating the function to calculate the era the user was born 
+# Creating the function to calculate the era the user was born 
 
 @app.route("/get-user-era/<int:year>")
 def get_user_era(year):
@@ -76,44 +70,50 @@ def get_user_era(year):
     else:
        message =  "You were not born in a barbie era"
 
-    return render_template('get_user_era.html', message=message, user_era=[])
+    return render_template('view_barbie_era.html', message=message)
 
-#add entry to user_era databse
-@app.route('/create_user_era', methods=['GET','POST'])
-def add_user_era():
-    form = user_eraForm()
+# Add entry to barbie_era database
+
+@app.route('/create_barbie_era', methods=['GET','POST'])
+def add_barbie_era():
+    form = barbie_eraForm()
     Users = user.query.all()
-    form.user_era.choices = [(user.user_id, f"{user.forename} {user.surname}") for user in Users]
+    form.user.choices = [(user.user_id, f"{user.forename} {user.surname}") for user in Users]
     if form.validate_on_submit():
-        user_era_decade = form.user_era_decade.data
-        user_id = form.user_era
-        new_user_era = user_era(user_era_decade=user_era_decade, user_era=user_id) 
-        db.session.add(new_user_era)
+        barbie_year = form.barbie_year.data
+        birth_year= form.birth_year.data
+        user_id = form.user.data
+        new_barbie_era = barbie_era( barbie_year=barbie_year, birth_year=birth_year)
+        db.session.add(new_barbie_era)
         db.session.commit()
-        return redirect (url_for('get_user_era', print = 'Added ',year=int(user_era_decade.strip("'s"))))
+        return redirect (url_for('get_user_era',year=int(birth_year.strip("'s"))))
     else:
-        return render_template('user_era_form.html', form=form )
+        return render_template('barbie_era_form.html', form=form )
+
+@app.route('/view_barbie_era')
+def view_barbie_era():
+    barbie_era_= barbie_era.query.all()
+    return render_template('view_barbie_era.html', entity ='barbie',barbie=barbie_era_)
      
 #update user_era //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@app.route('/update_user_era/<int:id>', methods = ['GET', 'POST'])
-def update_user_era(id):
-    user_era_update = user_era.query.get(id)
-    form = user_eraForm()
+@app.route('/update_barbie_era', methods=['GET','POST'])
+def update_barbie_era():
+    form = barbie_eraForm()
     Users = user.query.all()
-    form.user_era.choices = [(user.user_id, f"{user.forename}{user.surname}" for user in Users)]
+    form.user.choices = [(user.user_id, f"{user.forename} {user.surname}") for user in Users]
     if form.validate_on_submit():
-        user_era_decade = form.user_era_decade.data
-        user_era= form.user_era.data
+        update_barbie_year = form.barbie_year.data
+        update_birth_year= form.birth_year.data
         db.session.commit()
-        return redirect (url_for('view_user_era', print='User Era Updated'))
-    form.user_era_decade.data = user_era_decade
-    form.user_era.data = user_era
-    return render_template('user_era_form.html', form=form)
+        return redirect (url_for('get_user_era',year=int(update_birth_year.strip("'s"))))
+    form.barbie_year.data = update_barbie_year
+    form.birth_year = update_birth_year
+    return render_template('barbie_era_form.html', form=form )
 
-@app.route('/delete_user_era/<int:id>')
-def delete_user_era(id):
-    user_era_delete = user.query.get(id)
-    db.session.delete(user_era_delete)
+@app.route('/delete_barbie_era/<int:id>')
+def delete_barbie_era(id):
+    barbie_era_delete = barbie_era.query.get(id)
+    db.session.delete(barbie_era_delete)
     db.session.commit()
-    return redirect (url_for('view_user_era', print="User Era Deleted"))
+    return redirect (url_for('view_barbie_era', print="User Era Deleted"))
