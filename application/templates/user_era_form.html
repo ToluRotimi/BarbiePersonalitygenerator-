@@ -3,9 +3,8 @@
 <div class = 'Form'>
     <form method="POST" action="">
         {{form.hidden_tag()}}
-        {{form.user_id.label}} {{form.user_id}}
-        {{form.era_id.label}} {{form.era_id}}
-        {{form.user_era_decade.label}} {{form.user_era_decade}}
+        {{form.user_era_decade.label}} {{form.user_era_decade}}<br>
+        {{form.user_era.label}}  {{form.user_era}}
         <br>
         {{form.submit}}
     </form>
