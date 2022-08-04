@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h2> {{entity}} </h2>
+{% for user in Users %}
+{{ user.__str__()}}
+{% if entity == 'Users' %}
+Assignee: {{Users.__str__()}}
+{% endif %}
+<br>
+{% endfor %}
+{% endblock body %}

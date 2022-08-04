@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h2> {{entity}} </h2>
+{% for user in user_era %}
+{{ user.__str__()}}
+{% if entity == 'users_era' %}
+Assignee: {{users.__str__()}}
+{% endif %}
+<br>
+{% endfor %}
+{{message}}
+{% endblock body %}
