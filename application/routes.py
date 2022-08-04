@@ -97,18 +97,17 @@ def view_barbie_era():
      
 #update user_era //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@app.route('/update_barbie_era', methods=['GET','POST'])
-def update_barbie_era():
+@app.route('/update_barbie_era/<int:id>',  methods=['GET','POST'])
+def update_barbie_era(id):
+    barbie_era_to_update=barbie_era.query.get(id)
     form = barbie_eraForm()
     Users = user.query.all()
     form.user.choices = [(user.user_id, f"{user.forename} {user.surname}") for user in Users]
     if form.validate_on_submit():
-        update_barbie_year = form.barbie_year.data
-        update_birth_year= form.birth_year.data
+        barbie_era_to_update.barbie_year=form.barbie_year.data
+        barbie_era_to_update.birth_year= form.birth_year.data
         db.session.commit()
-        return redirect (url_for('get_user_era',year=int(update_birth_year.strip("'s"))))
-    form.barbie_year.data = update_barbie_year
-    form.birth_year = update_birth_year
+        return redirect (url_for('get_user_era',year=int(barbie_era_to_update.barbie_year.strip("'s"))))
     return render_template('barbie_era_form.html', form=form )
 
 @app.route('/delete_barbie_era/<int:id>')

@@ -17,7 +17,7 @@ class TestBase(TestCase):
     def setUp(self): # runs before each test that we run 
         db.create_all()
         user1 = user(forename = 'Sample', surname = 'User')
-        barbie_era1 = barbie_era(user='Sample User',barbie_year='1950',birth_year='1950')
+        barbie_era1 = barbie_era(user=1,barbie_year='1950',birth_year='1950')
         db.session.add(user1)
         db.session.add(barbie_era1)
         db.session.commit()
@@ -61,7 +61,7 @@ class TestView(TestBase):
         self.assert200(response)
 
     def test_update_user_era(self):
-        response = self.client.get(url_for('update_barbie_era'))
+        response = self.client.get(url_for('update_barbie_era',id=1))
         self.assert200(response)
 
     def test_delete_user(self):
@@ -78,34 +78,35 @@ class TestPostRequests(TestBase):
     def test_post_add_user(self):
         response = self.client.post(
             url_for('add_new_user'),
-            data = dict(forename = 'Sample', surname = 'User'),
+            data = dict(forename= 'Sample', surname= 'User'),
             follow_redirects = True)
-        assert user.query.filter_by(forename='New').first() is not None
         self.assert200 (response)
+        assert user.query.filter_by(forename='Sample').first() is not None
 
     def test_post_update_user(self):
         response = self.client.post(
-            url_for('update_user', id=1),
-            data = dict(forename = 'New', surname = 'User'),
-            follow_redirects = True)
-        assert user.query.filter_by(forename='New').first() is not None
-        assert user.query.filter_by(forename='Sample').first() is None
-        self.assert200 (response)
+            url_for('update_users', id=1),
+            data = dict(forename= 'New', surname= 'User'),
+            follow_redirects=True
+        )
+        self.assert200(response)
+        self.assertIn(b'Barbie', response.data)
+      
 
     def test_post_add_era(self):
         response = self.client.post(
             url_for('add_barbie_era'),
             data = dict(barbie_year ='1950', birth_year='1950', user=1),
             follow_redirects = True)
-        assert barbie_era.query.filter_by(barbie_year='1950').first() is not None
         self.assert200 (response)
+        assert barbie_era.query.filter_by(barbie_year='1950').first() is not None
+        
 
     def test_post_update_era(self):
         response = self.client.post(
-            url_for('update_barbie_era'),
-            data = dict(barbie_year ='2000', birth_year='1950', user_era =1),
+            url_for('update_barbie_era', id=1),
+            data = dict(barbie_year ='2000', birth_year='2000', user_era =1),
             follow_redirects = True)
-        assert user_era.query.filter_by(user_era_decade= '2000').first() is not None
-        assert user.query.filter_by(forename='1950').first() is None
         self.assert200 (response)
+        self.assertIn(b'Barbie', response.data)
     
