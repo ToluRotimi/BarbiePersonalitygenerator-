@@ -63,7 +63,7 @@ The aim for doing this was that an already established user in the database coul
 
 Frontend apllication done using flask and HTML
 
-* Create Functionality 
+Create Functionality 
  
  The user inputs their forename and surname and then the barbie era picks up that user and asks for their birth year
  
@@ -75,13 +75,13 @@ Frontend apllication done using flask and HTML
 
 ![image](https://user-images.githubusercontent.com/96881229/183046026-ab090352-2758-43b1-8c38-25253b76c495.png)
 
-* PYTHON CODE
-* 
-The python code was created utilising the if statements to print out the barbie year that matched with user
+Python code
+ 
+The python code was created utilising the if statements to print out the barbie year that matched with user.
 
 ![image](https://user-images.githubusercontent.com/96881229/183047029-275da948-3163-438c-8569-d9402c3c2e72.png)
 
-* Read Functionality
+Read Functionality
 
 ![image](https://user-images.githubusercontent.com/96881229/183048627-35a3d7fd-3523-4d5e-82c5-90597064ce16.png)
 ![image](https://user-images.githubusercontent.com/96881229/183048733-37f8776b-4e62-4a05-b4d9-35e5608926de.png)
@@ -92,9 +92,9 @@ Done using sqlalchjemy(ORM) to interact with the database but without needing to
 
 * Unit Testing
 
- * Get Request
- Tested using Pytest
- Command Line : python3 -m pytest and python3 -m pytest --cov=application
+Get Request
+
+Tested using Pytest - Command Line : python3 -m pytest and python3 -m pytest --cov=application
  
  ![image](https://user-images.githubusercontent.com/96881229/183049145-2833cd8e-85c7-4688-a301-cbd4021353f2.png)
  
@@ -104,7 +104,7 @@ Done using sqlalchjemy(ORM) to interact with the database but without needing to
  * Test to see that the added entry for add user and add barbie era has been added to the application
  * Test to see the that for the update user or barbie era gets updated and is successful 
  
- * Post Request
+Post Request
  
  ![image](https://user-images.githubusercontent.com/96881229/183051717-47a60c8d-6bc9-46d9-ad72-a36cf5e55673.png)
  
@@ -113,9 +113,16 @@ Done using sqlalchjemy(ORM) to interact with the database but without needing to
  
 ![image](https://user-images.githubusercontent.com/96881229/183052316-38ea12a9-cb2c-4662-a635-38511c734345.png)
 
+Integration Testing 
 
- * Integration Testing 
- Tested using Selenium
+Tested using Selenium
+
+The aim of integration testion is to insert fake entries into fields and it is then passed unto the frontend and
+then integrated with the backend to come back successful. 
+
+![image](https://user-images.githubusercontent.com/96881229/183053553-f01bc6e9-dabe-4156-8535-44e5dc1d28cd.png)
+* testing the fields of forename and surname on the add user form 
+* testing for fields of barbie year , birth year and user on the 
  
  ### **Future**
  * Test for validators 
