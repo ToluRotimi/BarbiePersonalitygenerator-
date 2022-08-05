@@ -60,7 +60,10 @@ The initial didn't adhere to best practices and was over complicated so I create
 The aim for doing this was that an already established user in the database could just have their user_id already in the barbie_era so all they needed to do was pick their birth year to calculate what barbie era they were born. 
 
 ### **Front End**
+
 Frontend apllication done using flask and HTML
+
+* Create Functionality
 
 ![image](https://user-images.githubusercontent.com/96881229/183045593-fba74fbb-a5eb-491a-beb8-96e5ebcec5e1.png)
 
@@ -71,10 +74,12 @@ Frontend apllication done using flask and HTML
 The user is then taken to a url where it prints out the barbie era they were born in
 
 * PYTHON CODE
+* 
 The python code was created utilising the if statements to print out the barbie year that matched with user
 
-![image](https://user-images.githubusercontent.com/96881229/183047029-275da948-3163-438c-8569-d9402c3c2e72.png)
+![image](https://user-images.githubusercontent.com/96881229/183047029-275da948-3163-438c-8569-d9402c3c2e72.png
 
+* Displaying the Read Functionality
 
 sqlalchjemy - orm - interact database but without needing to manually go to the database 
 
