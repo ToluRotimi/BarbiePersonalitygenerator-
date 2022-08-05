@@ -85,7 +85,6 @@ The python code was created utilising the if statements to print out the barbie 
 * Displaying the Read Functionality
 
 ![image](https://user-images.githubusercontent.com/96881229/183048627-35a3d7fd-3523-4d5e-82c5-90597064ce16.png)
-
 ![image](https://user-images.githubusercontent.com/96881229/183048733-37f8776b-4e62-4a05-b4d9-35e5608926de.png)
 
 Done using sqlalchjemy(ORM) to interact with the database but without needing to manually go to the database.
@@ -93,6 +92,13 @@ Done using sqlalchjemy(ORM) to interact with the database but without needing to
 ### **Testing**
 
 *Unit Testing
- *Summary on Tests
+
+ *Get Request
+ Tested using Pytest
+ Command Line : python3 -m pytest and python3 -m pytest --cov=application
+ 
+ ![image](https://user-images.githubusercontent.com/96881229/183049145-2833cd8e-85c7-4688-a301-cbd4021353f2.png)
+
+ 
 
 
