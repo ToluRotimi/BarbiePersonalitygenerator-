@@ -98,6 +98,16 @@ Done using sqlalchjemy(ORM) to interact with the database but without needing to
  Command Line : python3 -m pytest and python3 -m pytest --cov=application
  
  ![image](https://user-images.githubusercontent.com/96881229/183049145-2833cd8e-85c7-4688-a301-cbd4021353f2.png)
+ 
+ The aim was to essentially test for the crud part of the application and and see that it comes back successful
+ * Test for view users to see that entry had been successful in the application
+ * Test for get_user_era to see that the python calculation was succesful and it displays the right message
+ * Test to see the that for the add user or create barbie era runs successfully. 
+ 
+ ### **Future**
+ * Test for validators 
+ * Create jobs in jenkins to run automated tests 
+ * Add in a nav bar to create a better user interface to make it more accessible to the user 
 
  
 
