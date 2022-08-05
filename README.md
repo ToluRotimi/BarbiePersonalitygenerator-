@@ -61,12 +61,11 @@ The aim for doing this was that an already established user in the database coul
 
 ### **Front End**
 
-Frontend apllication done using flask and HTML
+Frontend aplication done using flask and HTML
 
 Create Functionality 
  
  The user inputs their forename and surname and then the barbie era picks up that user and asks for their birth year
- 
  The user is then taken to a url where it prints out the barbie era they were born in
  
 ![image](https://user-images.githubusercontent.com/96881229/183045593-fba74fbb-a5eb-491a-beb8-96e5ebcec5e1.png)
