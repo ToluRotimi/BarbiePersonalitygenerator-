@@ -80,11 +80,15 @@ Frontend apllication done using flask and HTML
 * 
 The python code was created utilising the if statements to print out the barbie year that matched with user
 
-![image](https://user-images.githubusercontent.com/96881229/183047029-275da948-3163-438c-8569-d9402c3c2e72.png
+![image](https://user-images.githubusercontent.com/96881229/183047029-275da948-3163-438c-8569-d9402c3c2e72.png)
 
 * Displaying the Read Functionality
 
-sqlalchjemy - orm - interact database but without needing to manually go to the database 
+![image](https://user-images.githubusercontent.com/96881229/183048627-35a3d7fd-3523-4d5e-82c5-90597064ce16.png)
+
+![image](https://user-images.githubusercontent.com/96881229/183048733-37f8776b-4e62-4a05-b4d9-35e5608926de.png)
+
+Done using sqlalchjemy(ORM) to interact with the database but without needing to manually go to the database.
 
 ### **Testing**
 
