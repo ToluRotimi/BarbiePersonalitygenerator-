@@ -123,9 +123,20 @@ then integrated with the backend to come back successful.
 ![image](https://user-images.githubusercontent.com/96881229/183053553-f01bc6e9-dabe-4156-8535-44e5dc1d28cd.png)
 * testing the fields of forename and surname on the add user form 
 * testing for fields of barbie year , birth year and user on the 
+
+* Progress 
+
+![image](https://user-images.githubusercontent.com/96881229/183054364-7a3bb33c-3bad-4928-9382-955fc729484e.png)
+
+![image](https://user-images.githubusercontent.com/96881229/183054426-1ff447a2-2ac6-467d-a385-8672d544fc51.png)
+
+![image](https://user-images.githubusercontent.com/96881229/183054468-49058c37-81f1-4858-b2b0-91b4f161e543.png)
+
+
+
  
  ### **Future**
- * Test for validators 
+ * Test for validators to lead to more coverage
  * Create jobs in jenkins to run automated tests 
  * Add in a nav bar to create a better user interface to make it more accessible to the user 
 
