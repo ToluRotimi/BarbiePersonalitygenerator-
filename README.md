@@ -70,7 +70,10 @@ Frontend apllication done using flask and HTML
 
 The user is then taken to a url where it prints out the barbie era they were born in
 
-PYTHON CODE
+* PYTHON CODE
+The python code was created utilising the if statements to print out the barbie year that matched with user
+
+![image](https://user-images.githubusercontent.com/96881229/183047029-275da948-3163-438c-8569-d9402c3c2e72.png)
 
 
 sqlalchjemy - orm - interact database but without needing to manually go to the database 
