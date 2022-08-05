@@ -63,8 +63,7 @@ The aim for doing this was that an already established user in the database coul
 
 Frontend apllication done using flask and HTML
 
-* Create Functionality
- The user form and the Barbie era form. 
+* Create Functionality 
  
  The user inputs their forename and surname and then the barbie era picks up that user and asks for their birth year
  
@@ -82,7 +81,7 @@ The python code was created utilising the if statements to print out the barbie 
 
 ![image](https://user-images.githubusercontent.com/96881229/183047029-275da948-3163-438c-8569-d9402c3c2e72.png)
 
-* Displaying the Read Functionality
+* Read Functionality
 
 ![image](https://user-images.githubusercontent.com/96881229/183048627-35a3d7fd-3523-4d5e-82c5-90597064ce16.png)
 ![image](https://user-images.githubusercontent.com/96881229/183048733-37f8776b-4e62-4a05-b4d9-35e5608926de.png)
@@ -91,9 +90,9 @@ Done using sqlalchjemy(ORM) to interact with the database but without needing to
 
 ### **Testing**
 
-*Unit Testing
+* Unit Testing
 
- *Get Request
+ * Get Request
  Tested using Pytest
  Command Line : python3 -m pytest and python3 -m pytest --cov=application
  
@@ -102,7 +101,21 @@ Done using sqlalchjemy(ORM) to interact with the database but without needing to
  The aim was to essentially test for the crud part of the application and and see that it comes back successful
  * Test for view users to see that entry had been successful in the application
  * Test for get_user_era to see that the python calculation was succesful and it displays the right message
- * Test to see the that for the add user or create barbie era runs successfully. 
+ * Test to see that the added entry for add user and add barbie era has been added to the application
+ * Test to see the that for the update user or barbie era gets updated and is successful 
+ 
+ * Post Request
+ 
+ ![image](https://user-images.githubusercontent.com/96881229/183051717-47a60c8d-6bc9-46d9-ad72-a36cf5e55673.png)
+ 
+ The aim of post request is to ensure that in relation to the forms displayed for the add and update functionalites
+ It gets posted into the application and comes back successful. 
+ 
+![image](https://user-images.githubusercontent.com/96881229/183052316-38ea12a9-cb2c-4662-a635-38511c734345.png)
+
+
+ * Integration Testing 
+ Tested using Selenium
  
  ### **Future**
  * Test for validators 
