@@ -124,7 +124,7 @@ then integrated with the backend to come back successful.
 * testing the fields of forename and surname on the add user form 
 * testing for fields of barbie year , birth year and user on the 
 
-* Progress 
+### **Progress** 
 
 ![image](https://user-images.githubusercontent.com/96881229/183054364-7a3bb33c-3bad-4928-9382-955fc729484e.png)
 
@@ -132,14 +132,21 @@ then integrated with the backend to come back successful.
 
 ![image](https://user-images.githubusercontent.com/96881229/183054468-49058c37-81f1-4858-b2b0-91b4f161e543.png)
 
+### **Jenkins**
 
+![image](https://user-images.githubusercontent.com/96881229/183054974-6fa168e5-a049-4238-9461-828e9c7ab26f.png)
 
+![image](https://user-images.githubusercontent.com/96881229/183055125-90f7349e-e037-44ba-89d1-6d1e6af42b13.png)
+
+Setup Complete
  
  ### **Future**
  * Test for validators to lead to more coverage
  * Create jobs in jenkins to run automated tests 
  * Add in a nav bar to create a better user interface to make it more accessible to the user 
 
- 
+### **Acknowledgements**
+Thank you to Adam Gray for taking the time to teach and help 
+https://stackoverflow.com/
 
 
