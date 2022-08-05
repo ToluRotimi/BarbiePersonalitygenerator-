@@ -1,4 +1,4 @@
-# **_Barbie - ERA Generator_**
+# **_Barbie - ERA Calculator_**
 ## Author - Tolu Rotimi
 ## Objective
 * To create a CRUD application with utilisation of supporting tools,
