@@ -146,7 +146,8 @@ Setup Complete
  * Add in a nav bar to create a better user interface to make it more accessible to the user 
 
 ### **Acknowledgements**
+
 Thank you to Adam Gray for taking the time to teach and help 
-https://stackoverflow.com/
+
 
 
